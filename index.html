@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nail Art Gallery</title>
+    <link rel="stylesheet" href="styles.css">
     <!-- You can link to a CSS file here for styles -->
 </head>
 <body>
     <!-- Content goes here -->
     <h1>Welcome to My Nail Art Gallery</h1>
-    
+    <div id="tags">
+        <button class="tag" data-tag="floral">Floral</button>
+        <button class="tag" data-tag="matte">Matte</button>
+        <button class="tag" data-tag="animal">Nature</button>
+        <button class="tag" id="showAll">Show All</button>
+    </div>
+    <!-- Image gallery -->
+    <div id="gallery">
+        <!-- Images with associated tags -->
+        <div class="image" data-tags="animal nature">
+            <img src="photos/animal_print1.jpg" alt="Cow Nail Art" />
+        </div>
+        <div class="image" data-tags="floral matte">
+            <img src="photos/floral1.jpgg" alt="Flower Nail Art" />
+        </div>
+        
+        <!-- Add more images as needed -->
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
