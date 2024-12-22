@@ -1,13 +1,5 @@
 [
-  { "file": "photos/french_tip1.jpg", "tags": ["french tip", "white"] }
   { "file": "photos/floral1.jpg", "tags": ["floral", "pink"] },
-  { "file": "photos/matte1.jpg", "tags": ["matte", "blue"] },
-  { "file": "photos/nature1.jpg", "tags": ["nature", "green"] },
-  { "file": "photos/nature2.jpg", "tags": ["nature", "green"] },
-  { "file": "photos/vinyl1.jpg", "tags": ["vinyl", "black", "red"] },
-  { "file": "photos/vinyl2.jpg", "tags": ["vinyl", "purple"] },
-  { "file": "photos/vinyl3.jpg", "tags": ["vinyl", "blue", "gold"] },
-  { "file": "photos/animal_print1.jpg", "tags": ["animal print", "cow"] },
-  { "file": "photos/rainbow1.jpg", "tags": ["rainbow"] }
+  { "file": "photos/animal_print1.jpg", "tags": ["animal", "nature"] }
 
 ]
