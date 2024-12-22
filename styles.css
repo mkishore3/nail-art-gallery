@@ -1,0 +1,14 @@
+/* Gallery */
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+/* Image Styling */
+.image {
+    width: 200px;  /* Set the desired image width */
+    height: auto;   /* Keep aspect ratio */
+}
