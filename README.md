@@ -1,5 +1,5 @@
 # nail-art-gallery
-## Welcome to my site!
+Welcome to my site!
 
-this is some test text :))
-did it work??
+## Motivation
+talk about my interest in nail art, etc.
