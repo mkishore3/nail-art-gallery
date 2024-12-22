@@ -1,4 +1,5 @@
 [
-  { "file": "photos/animal_print1.png", "tags": ["animal", "nature"] },
-  { "file": "photos/floral1.png", "tags": ["floral", "pink"] }
+  { "file": "photos/animal_print1.png", "tags": ["animal", "cow"] },
+  { "file": "photos/floral1.png", "tags": ["floral", "pink"] },
+  { "file": "photos/matte1.png", "tags": ["matte", "blue"] }
 ]
