@@ -10,6 +10,6 @@
 /* Image Styling */
 .image {
     width: 200px;  /* Set the desired image width */
-    height: auto;   /* Keep aspect ratio */
+    height: 200px;   
     border: 2px solid red; /* Add a border to see if the CSS is applied */
 }
