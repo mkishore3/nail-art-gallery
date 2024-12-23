@@ -13,26 +13,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Render images dynamically
             data.forEach(item => {
+                // Create a container for each image and description
+                const container = document.createElement('div');
+                container.classList.add('image-container');
+
+                // Create the image element
                 const imgElement = document.createElement('img');
-                imgElement.src = item.file; // Ensure this matches the paths in data.json
+                imgElement.src = item.file; 
                 imgElement.alt = `Nail art with tags: ${item.tags.join(', ')}`;
-                imgElement.classList.add('image'); // Add class for styling
-                imgElement.setAttribute('data-tags', item.tags.join(' ')); // Add tags as a space-separated string
-                gallery.appendChild(imgElement);
+                imgElement.classList.add('image'); 
+                imgElement.setAttribute('data-tags', item.tags.join(' ')); 
+
+                // Create the description element
+                const descriptionElement = document.createElement('p');
+                descriptionElement.textContent = item.description;
+                descriptionElement.classList.add('description'); 
+
+                // Append the image and description to the container
+                container.appendChild(imgElement);
+                container.appendChild(descriptionElement);
+
+                // Append the container to the gallery
+                gallery.appendChild(container);
             });
 
             // Tag filtering logic
             const tags = document.querySelectorAll('.tag');
             const showAllButton = document.getElementById('showAll');
-            const images = document.querySelectorAll('.image');
+            const images = document.querySelectorAll('.image-container');
 
             function filterImages(tag) {
-                images.forEach(image => {
-                    const imageTags = image.getAttribute('data-tags').split(' ');
+                images.forEach(imageContainer => {
+                    const imageTags = imageContainer
+                        .querySelector('img')
+                        .getAttribute('data-tags')
+                        .split(' ');
                     if (imageTags.includes(tag) || tag === 'all') {
-                        image.style.display = 'block';
+                        imageContainer.style.display = 'block';
                     } else {
-                        image.style.display = 'none';
+                        imageContainer.style.display = 'none';
                     }
                 });
             }
