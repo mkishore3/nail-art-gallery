@@ -3,5 +3,6 @@
   { "file": "photos/floral1.png", "tags": ["floral"], "description": "Black floral on pink" },
   { "file": "photos/matte1.png", "tags": ["matte"], "description": "Blue matte" },
   { "file": "photos/nature1.png", "tags": ["nature"], "description": "Dark green leaves" },
-  { "file": "photos/nature2.png", "tags": ["nature"], "description": "Light green pattern" }
+  { "file": "photos/nature2.png", "tags": ["nature"], "description": "Light green pattern" },
+  { "file": "photos/vinyl1.png", "tags": ["vinyl"], "description": "Reciprocal gradient"}
 ]
