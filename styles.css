@@ -9,11 +9,11 @@
 .image {
     width: 200px;  /* Set the desired image width */
     height: 200px;   
-    border: 2px solid red; /* Add a border to see if the CSS is applied */
+    
 }
 
 .description {
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 17px;
     color: #555; /* Optional: Adjust color for better readability */
 }
