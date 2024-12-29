@@ -8,7 +8,7 @@
   { "file": "photos/vinyl2.png", "tags": ["vinyl", "classic"], "description": "Heart on purple"},
   { "file": "photos/vinyl3.png", "tags": ["vinyl"], "description": "Blue and gold squiggle"},
   { "file": "photos/french_tip1.png", "tags": ["classic"], "description": "White french tip"},
-  { "file": "photos/rainbow1.png", "tags": ["rainbow", "vinyl"], "description": "Rainbow design"},
+  { "file": "photos/rainbow1.png", "tags": ["vinyl"], "description": "Rainbow design"},
   { "file": "photos/taylor.png", "tags": ["occasion"], "description": "Taylor Swift Eras Tour"},
   { "file": "photos/olivia.png", "tags": ["occasion"], "description": "Olivia Rodrigo Guts Tour"},
   { "file": "photos/sabrina.png", "tags": ["occasion"], "description": "Sabrina Carpenter concert"}
