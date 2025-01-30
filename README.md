@@ -9,4 +9,4 @@ I began painting my nails every week once the pandemic began. It was a creative 
 I still do nail art as often as I am able with the same level of passion. It brings me joy to show my art to others. I hope this site can be used for others to look at my own work as well as for me to look back on how my skills have improved.
 
 ## Skills
-To build this, I used **GitHub Pages** which utilized **HTML**. The data for each image is stored in a **JSON** file. The **JavaScript** file enables the use of buttons to denote categories and **CSS** was used to create the gallerty display itself.
+To build this, I used **GitHub Pages** which utilized **HTML**. The data for each image is stored in a **JSON** file. The **JavaScript** file enables the use of buttons to denote categories and **CSS** was used to create the gallery display itself.
