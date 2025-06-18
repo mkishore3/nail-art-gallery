@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             // Get the gallery container
             const gallery = document.getElementById('gallery');
+            const modal = document.getElementById('imageModal');
+            const modalImage = modal.querySelector('.modal-image');
+            const modalDescription = modal.querySelector('.modal-description');
+            const closeModal = modal.querySelector('.close-modal');
 
             // Render images dynamically
             data.forEach(item => {
@@ -33,14 +37,57 @@ document.addEventListener('DOMContentLoaded', function () {
                 container.appendChild(imgElement);
                 container.appendChild(descriptionElement);
 
+                // Add click event to open modal
+                container.addEventListener('click', () => {
+                    modalImage.src = item.file;
+                    modalImage.alt = imgElement.alt;
+                    modalDescription.textContent = item.description;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                });
+
                 // Append the container to the gallery
                 gallery.appendChild(container);
+            });
+
+            // Close modal when clicking the close button
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             });
 
             // Tag filtering logic
             const tags = document.querySelectorAll('.tag');
             const showAllButton = document.getElementById('showAll');
             const images = document.querySelectorAll('.image-container');
+
+            // Function to update the displayed image count
+            function updateImageCount() {
+                const visibleImages = Array.from(images).filter(container => 
+                    container.style.display !== 'none'
+                ).length;
+                const totalImages = images.length;
+                const countText = document.querySelector('p:has(b)');
+                if (countText) {
+                    countText.innerHTML = `There are currently <b>${visibleImages} of ${totalImages} images</b> displayed. Check back often to see new nail art!`;
+                }
+            }
 
             function filterImages(tag) {
                 images.forEach(imageContainer => {
@@ -54,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         imageContainer.style.display = 'none';
                     }
                 });
+                updateImageCount(); // Update count after filtering
             }
 
             tags.forEach(tagButton => {

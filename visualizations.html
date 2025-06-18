@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Art Gallery - Visualizations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="home.html" class="nav-logo">Nail Art Gallery</a>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="visualizations.html" class="nav-link active">Visualizations</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Nail Art Visualizations</h1>
+        <h3>Data Insights and Patterns</h3>
+        
+        <div class="visualization-container">
+            <div class="viz-card">
+                <h2>Tag Distribution</h2>
+                <div id="pieChart" class="chart">
+                    <svg id="tagPieChart"></svg>
+                </div>
+            </div>
+            
+            <!-- <div class="viz-card">
+                <h2>Timeline</h2>
+                
+            </div> -->
+        </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="visualizations.js"></script>
+</body>
+</html> 

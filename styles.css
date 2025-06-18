@@ -1,19 +1,339 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+h3 {
+    color: #34495e;
+    text-align: center;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+p {
+    text-align: center;
+    color: #666;
+    margin: 15px 0;
+}
+
 /* Gallery */
 #gallery {
-    display: grid; /* Use CSS grid layout */
-    grid-template-columns: repeat(5, 1fr); /* Create 5 equal columns */
-    gap: 20px; /* Add space between images */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+    justify-items: center;
+}
+
+/* Image Container */
+.image-container {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Image Styling */
 .image {
-    width: 200px;  /* Set the desired image width */
-    height: 200px;   
-    
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.image:hover {
+    transform: translateY(-3px);
 }
 
 .description {
-    margin-top: 8px;
-    font-size: 17px;
-    color: #555; /* Optional: Adjust color for better readability */
+    margin-top: 12px;
+    font-size: 15px;
+    color: #555;
+    text-align: center;
+}
+
+/* Tags/Buttons */
+#tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(0, 255, 255, 0.621);
+    color: #2c3e50;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: rgba(0, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#showAll {
+    background-color: #2c3e50;
+    color: white;
+}
+
+#showAll:hover {
+    background-color: #34495e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .image {
+        width: 150px;
+        height: 150px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Modal/Lightbox Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.modal-description {
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Visualization Page Styles */
+.visualization-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.viz-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.viz-card h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.chart {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    margin: 20px 0;
+}
+
+#tagPieChart {
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    pointer-events: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+}
+
+.tooltip::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tooltip::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.tooltip::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.tooltip::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Legend Styles */
+/* .legend-item {
+    transition: transform 0.2s ease;
+} */
+
+/* .legend-item:hover {
+    transform: translateX(2px);
+} */
+
+.legend-item rect {
+    transition: opacity 0.2s ease;
+}
+
+/* .legend-item:hover rect {
+    opacity: 1;
+} */
+
+.legend-item text {
+    fill: #2c3e50;
+    transition: fill 0.2s ease;
+    pointer-events: none;
+    dominant-baseline: middle;
+}
+
+.legend-item:hover text {
+    fill: #000;
 }
